@@ -7,6 +7,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { StandaloneModule } from './exercices/standalone/standalone.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { AppComponent } from './app.component';
     MatSidenavModule,
     MatListModule,
     MatToolbarModule,
+    StandaloneModule
   ],
   providers: [],
   bootstrap: [AppComponent]
