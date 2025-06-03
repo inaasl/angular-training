@@ -1,0 +1,29 @@
+<h1>Exercice 4 - Correction de bugs</h1>
+
+<div *ngIf="isLoading(); else loaded">
+  Chargement en cours...
+</div>
+
+<ng-template #loaded>
+  <ng-container *ngIf="data()?.permissions?.includes('user'); else forbidden">
+    <div class="flex flex-col gap-y-2 w-fit">
+      <span>Hello {{ data()?.name }}!</span>
+      <span>Voici vos permissions:</span>
+      <ul>
+        <li *ngFor="let permission of data()?.permissions">{{permission}}</li>
+      </ul>
+
+      <span>Vous pouvez ajouter la permission "admin" via ce bouton</span>
+      <button mat-stroked-button color="primary" (click)="updatePermission()">Devenir admin</button>
+    </div>
+
+    <ng-container *ngIf="data()?.permissions?.includes('user') && data()?.permissions?.includes('admin')">
+      <span class="font-bold text-lg my-4">Bravo! L'exercice est terminé :)</span>
+    </ng-container>
+
+  </ng-container>
+</ng-template>
+
+<ng-template #forbidden>
+  Oh oh.. On dirait que vous n'avez pas la permission "user"
+</ng-template>

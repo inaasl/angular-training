@@ -1,4 +1,6 @@
 import { Injectable, signal } from "@angular/core";
+import { Observable, delay, of } from "rxjs";
+import { Data } from "./exercices/bugs/bugs.model";
 
 @Injectable({providedIn: 'root'})
 export class AppService {
@@ -17,5 +19,9 @@ export class AppService {
     const sec = this.secondsElapsed() - (min +(hour * 60)) * 60;
 
     return `${hour}h${min.toString().padStart(2, '0')}m${sec.toString().padStart(2, '0')}s`;
+  }
+
+  getData(): Observable<Data> {
+    return of({name: 'John Doe', permissions: ['user']}).pipe(delay(1000));
   }
 }
