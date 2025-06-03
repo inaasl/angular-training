@@ -4,12 +4,14 @@ import { GitComponent } from './exercices/git/git.component';
 import { StandaloneComponent } from './exercices/standalone/standalone.component';
 import { CustomComponent } from './exercices/custom/custom.component';
 import { BugsComponent } from './exercices/bugs/bugs.component';
+import { MigrationComponent } from './exercices/migration/migration.component';
 
 const routes: Routes = [
   { path: 'git', component: GitComponent },
   { path: 'standalone', component: StandaloneComponent },
   { path: 'custom', component: CustomComponent },
   { path: 'bugs', component: BugsComponent },
+  { path: 'migration', component: MigrationComponent },
   { path: '', pathMatch: 'full', redirectTo: 'git' },
 ];
 
