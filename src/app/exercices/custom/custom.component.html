@@ -1,0 +1,43 @@
+<h1>Exercice 3 - Création d'un composant custom</h1>
+
+<h2>Tâches</h2>
+
+<p>L'objectif est de recréer le composant ci-dessous à l'identique.</p>
+<p>Quelques informations et/ou contraintes:</p>
+<ul>
+  <li>Il faut créer un nouveau composant Angular (à la main ou via CLI)</li>
+  <li>On doit pouvoir modifier le label et la couleur depuis le composant parent</li>
+</ul>
+
+
+<h2>Composant à reproduire</h2>
+
+<strong class="inline-block mb-4">Configuration du composant</strong>
+
+<form [formGroup]="form" class="flex gap-x-4">
+  <mat-form-field appearance="outline">
+    <mat-label>Label</mat-label>
+    <input matInput formControlName="label" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>[BONUS] Couleur</mat-label>
+    <mat-select formControlName="color">
+      <mat-option value="green">Green</mat-option>
+      <mat-option value="blue">Blue</mat-option>
+      <mat-option value="red">Red</mat-option>
+      <mat-option value="yellow">Yellow</mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>
+
+<div class="flex gap-x-12">
+<div class="flex flex-col">
+  <strong class="inline-block mb-4">Composant d'origine</strong>
+  <app-solution [label]="form.controls.label.value" [color]="form.controls.color.value"></app-solution>
+</div>
+<div class="flex flex-col">
+  <strong class="inline-block mb-4">Ta solution</strong>
+    <!-- PUT YOUR COMPONENT HERE -->
+</div>
+</div>
